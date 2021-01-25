@@ -12,6 +12,7 @@ router.get('/', async(req,res) => {
 });
 
 router.get('/exercise', async(req,res) => {
+    console.log("made it to exercise GET")
     try {
         res.render('exercise.html');
     } catch (err) {
@@ -26,3 +27,5 @@ router.get('/stats', async(req,res) => {
         res.status(500).json(err);
     }
 });
+
+module.exports = router;
