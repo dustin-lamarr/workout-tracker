@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Workout = require('../../models/Workouts');
+const Workout = require('../../models/Workouts.js');
 
 router.get('/workouts', async (req,res) => {
     console.log("made it to api/workouts")
