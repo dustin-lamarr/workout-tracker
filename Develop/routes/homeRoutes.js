@@ -1,31 +1,30 @@
-const router = require('express').Router();
-const apiRoutes = require('./api');
+const router = require("express").Router();
+const path = require('path');
 
-router.use('/api', apiRoutes);
-
-router.get('/', async(req,res) => {
-    try {
-        res.render('index.html');
-    } catch (err) {
-        res.status(500).json(err);
-    }
+router.get("/", async (req, res) => {
+  try {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get('/exercise', async(req,res) => {
-    console.log("made it to exercise GET")
-    try {
-        res.render('exercise.html');
-    } catch (err) {
-        res.status(500).json(err);
-    }
+router.get("/exercise", async (req, res) => {
+  console.log("made it to exercise GET");
+  try {
+    res.sendFile(path.join(__dirname, '../public/exercise.html'));
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get('/stats', async(req,res) => {
-    try {
-        res.render('stats.html');
-    } catch (err) {
-        res.status(500).json(err);
-    }
+router.get("/stats", async (req, res) => {
+  console.log("made it to stats get");
+  try {
+    res.sendFile(path.join(__dirname, '../public/stats.html'));
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
