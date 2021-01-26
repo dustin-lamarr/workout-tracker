@@ -14,12 +14,12 @@ router.get('/workouts', async (req,res) => {
 router.put('/workouts/:id', async (req,res) => {
     const id = req.params.id;
     const body = req.body;
-    
+
     try {
-        const workoutData = await Workout.findOneAndUpdate({_id: req.params.id}, {$push: {exercises: body}})
+        const workoutData = await Workout.findOneAndUpdate({_id: id}, {$push: {exercises: body}})
         res.status(200).json(workoutData)
     } catch(err) {
-        res.status(400).json(workoutData)
+        res.status(400).json(err)
     }
 });
 
