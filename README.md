@@ -38,7 +38,7 @@ N/A
 
 ## How to use?
 Add workout to create a workout. Fill out all fields and add to workout program. Access graphics using the dashboard to see your progress.
-
+<img src="./addworkout.png"></img>
 ## Contribute
 N/A
 
